@@ -1,0 +1,45 @@
+import pandas as pd
+wine = pd.read_csv('',sep=';')
+wine.head()	wine.shape	wine.data	wine.target
+
+	#wine.isnull().sum()
+	#wrangle  = wine[wine['sulphur-content'].notnull()]
+#the quality is range 1 to 8, to categorizing it into just 3 way, that is bad, okay and good quality
+	wineBad = wine[wine['quality']<3]
+	wineOkay = wine[wine['quality'].between(3,6)]
+	wineGood = wine[wine['quality']>6]
+
+	new_dataset = pd.append(wineBad,wineOkay,wineGood)
+
+x = wine.drop['quality']
+y = wine['quality']
+
+from sklearn.model_selection import train_test_split
+x-train,x-test,y-train,y-test = train_test_split(x,y,test_size,random_size=4)
+
+x-train-mod = x-train.ravel() or reshape
+y-train-mod
+x-test-mod
+y-test-mod  	all reshape(-1,1) or ravel()
+
+from sklearn import svm
+svm_model = svm.SVC()
+svm_model.fit(x-train,y-train)
+	#testing
+y_predicted = svm_model.predict(y-test-mod)
+
+	#for testing
+from sklearn.metrices import accuracy_score, confusion_matrix, classification_report
+print(accuracy_score(y_test-mod,y_predicted)
+similar for confusion matrix and classification report
+
+	#for  own data
+import numpy as np
+datasa = np.array[(1,2,5,64,45,2)]
+
+predict = svm_model.predict([datsa])
+
+
+
+
+
